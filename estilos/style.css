@@ -63,3 +63,83 @@ nav#menu a:hover {
   color: var(--destaque);
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr 90dvw 1fr;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+section#ficha {
+  grid-column: 2;
+  background-color: var(--fundo-card);
+  padding: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+section#ficha img.foto {
+  width: 200px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--fundo-card);
+  outline: 5px solid var(--destaque);
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+section#ficha h1 {
+  color: var(--destaque);
+  margin-bottom: 13px;
+  text-align: center;
+}
+
+div#social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 1.7em;
+  gap: 15px;
+}
+
+div#social a {
+  color: var(--destaque);
+}
+
+div#social a:hover {
+  color: var(--destaque-inverso);
+  transition: color 0.5s;
+}
+
+section#detalhes {
+  grid-column: 2;
+}
+
+section#detalhes h2 {
+  color: var(--destaque);
+  margin-bottom: 10px;
+}
+
+article {
+  background-color: var(--fundo-card);
+   padding: 20px;
+   margin-bottom: 15px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.video-container {
+  position: relative;
+  aspect-ratio: 16/9;
+  width: 100%;
+  margin: auto;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
