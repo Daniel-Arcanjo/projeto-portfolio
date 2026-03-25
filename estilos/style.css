@@ -37,6 +37,9 @@ header {
   padding: 10px;
   display: flex;
   justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 nav > ul {
@@ -137,6 +140,7 @@ article {
 }
 
 .video-container iframe {
+  border-radius: 8px;
   position: absolute;
   top: 0;
   left: 0;
@@ -190,11 +194,12 @@ div.formacao-container {
    border-left: 5px solid var(--destaque-inverso);
    padding: 3px 10px;
    cursor: pointer;
+   transition: border-left-width 0.5s, border-color 0.5s;
 }
 
 .curso:hover {
-  border-left: 15px solid var(--destaque);
-  transition: border 0.5s, color 0.5s;
+  border-left-width: 15px;
+  border-color: var(--destaque);
 }
 
 .periodo {
@@ -208,8 +213,80 @@ div.formacao-container {
   font-size: 1.3em;
 }
 
+div#projetos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.projeto {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fundo-principal);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid var(--destaque-inverso);
+  cursor: pointer;
+  transition: border-left-width 0.5s, border-color 0.5s;
+}
+
+.projeto:hover {
+  border-left-width: 15px;
+  border-color: var(--destaque);
+}
+
+div#projetos-container .foto {
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+}
+
+
+
+footer {
+  background-color: var(--destaque);
+  text-align: center;
+  padding: 10px;
+  color: var(--texto-inverso);
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: auto 300px 1fr auto;
+  }
+
+  section#ficha {
+    grid-column: 2 / 3;
+    position: sticky;
+    height: fit-content;
+    top: 63px;
+  }
+
+  section#detalhes {
+    grid-column: 3 / 4;
+  }
+
   #skill-container {
     grid-template-columns: 1fr 1fr;
+  }
+  div#projetos-container .projeto {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  div#projetos-container projeto.info {
+    max-width: 80%;
+  }
+  div#projetos-container .foto {
+    aspect-ratio: 1/1;
+    max-width: 20%;
+    max-height: 200px;
   }
 }
